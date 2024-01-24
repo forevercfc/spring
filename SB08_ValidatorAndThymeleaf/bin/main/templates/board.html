@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaft.org">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <title>Title</title>
+</head>
+<body>
+<form action="#" th:action="@{/}" th:object="${personForm}" method="post">
+   <table>
+	  <tr>
+		 <th>이름 :</th>
+		 <th><input type="text" th:field="*{name}"></th>
+		 <th th:if="${#fields.hasErrors('name')}" th:errors="*{name}">이름 에러</th>
+	  </tr>
+	  <tr>
+		 <th>나이 :</th>
+		 <th><input type="text" th:field="*{age}"></th>
+		 <th th:if="${#fields.hasErrors('age')}" th:errors="*{age}">나이 에러</th>
+	  </tr>
+	  <tr>
+		 <th>성별 :</th>
+		 <th>
+			<input name="gender" type="radio" th:field="*{gender}" value="man">남
+			<input name="gender" type="radio" th:field="*{gender}" value="woman">여
+		 </th>
+		 <th th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}">성별 에러</th>
+	  </tr>
+	  <tr>
+		 <th>이메일 :</th>
+		 <th><input type="text" th:field="*{email}"></th>
+		 <th th:if="${#fields.hasErrors('email')}" th:errors="*{email}">이메일 에러</th>
+	  </tr>
+	  <tr>
+		 <td>
+			<button type="submit">제출</button>
+		 </td>
+	  </tr>
+   </table>
+</form>
+<hr>
+<h2></h2>
+<ol>
+   <li>th:action => 타임리프 템플릿 렌더링을 위해 사양되는 속성으로 값을 안 넣으면 같은 url에 post방식으로 요청하고 @{}안에 원하는 주소값을 넣는다</li>
+   <li>th:object => 커맨드 객체를 지정해서 form에서 사용할 때 활용할 수 있다</li>
+   <li>th:field => 선택 변수 식이라고 한다. th:object에서 선언한 객체 프로퍼티에 접근할 수 있다</li>
+   <li>=> *{name}는 ${PersonForm.name}를 의미</li>
+   <li>th:if => 조건식에 사용한다.</li>
+   <li>#뒤에는 객체가 붙는다. #fields는 th:field에서 지정한 속성명들을 모두 모아서 받는다.</li>
+   <li></li>
+</ol>
+<p></p>
+<p>
+<p></p>
+<p></p>
+</body>
+</html>
+
+
+
+

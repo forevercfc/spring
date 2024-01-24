@@ -12,22 +12,24 @@ java {
 	sourceCompatibility = '17'
 }
 
-configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
-	}
-}
-
 repositories {
 	mavenCentral()
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
-	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+compileOnly 'org.projectlombok:lombok'
+   annotationProcessor 'org.projectlombok:lombok'
+   implementation 'org.springframework.boot:spring-boot-starter-web'
+   providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+   testImplementation 'org.springframework.boot:spring-boot-starter-test'
+   // jsp를 사용하기 위한 의존성 주입
+   implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper'
+   // el 태그 사용하기 위한 의존성 주입
+   implementation group: 'org.glassfish.web', name: 'jakarta.servlet.jsp.jstl'
+   // c 태그를 사용하기 위한 의존성 주입
+   implementation group: 'jakarta.servlet.jsp.jstl', name: 'jakarta.servlet.jsp.jstl-api'
+   // 코드 변경 시 재실행하지 않아도 반영
+   developmentOnly 'org.springframework.boot:spring-boot-devtools'
 }
 
 tasks.named('test') {

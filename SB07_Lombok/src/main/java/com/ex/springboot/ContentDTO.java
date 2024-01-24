@@ -6,5 +6,5 @@ import lombok.Data;
 public class ContentDTO {
 	private int id;
 	private String Writer;
-	private String Conrtent;
+	private String Content;
 }
