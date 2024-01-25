@@ -6,31 +6,27 @@
    <title>Title</title>
 </head>
 <body>
-<form action="#" th:action="@{/}" th:object="${personForm}" method="post">
+<form action="#" th:action="@{/board}" th:object="${contentDTO}" method="post">
    <table>
 	  <tr>
-		 <th>이름 :</th>
+		 <th>글번호 :</th>
 		 <th><input type="text" th:field="*{name}"></th>
 		 <th th:if="${#fields.hasErrors('name')}" th:errors="*{name}">이름 에러</th>
 	  </tr>
 	  <tr>
-		 <th>나이 :</th>
-		 <th><input type="text" th:field="*{age}"></th>
+		 <th>글쓴이 :</th>
+		 <th><input type="text" th:field="*{writer}"></th>
 		 <th th:if="${#fields.hasErrors('age')}" th:errors="*{age}">나이 에러</th>
 	  </tr>
 	  <tr>
-		 <th>성별 :</th>
+		 <th>컨텐츠 :</th>
 		 <th>
 			<input name="gender" type="radio" th:field="*{gender}" value="man">남
 			<input name="gender" type="radio" th:field="*{gender}" value="woman">여
 		 </th>
 		 <th th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}">성별 에러</th>
 	  </tr>
-	  <tr>
-		 <th>이메일 :</th>
-		 <th><input type="text" th:field="*{email}"></th>
-		 <th th:if="${#fields.hasErrors('email')}" th:errors="*{email}">이메일 에러</th>
-	  </tr>
+	
 	  <tr>
 		 <td>
 			<button type="submit">제출</button>
