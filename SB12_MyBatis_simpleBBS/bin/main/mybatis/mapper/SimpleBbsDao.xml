@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+
+	<!-- namespace는 이 매퍼가 어떤 인터페이스와 연관된 매퍼인지를 설정 -->
+ <mapper namespace="com.ex.springboot.dao.ISimpleBbsDao">
+	<select id="listDao" resultType="com.ex.springboot.dto.SimpleBbsDto">
+  		select * from simpleBbs order by id desc
+  	</select>
+  	
+  	<select id="viewDao" resultType="com.ex.springboot.dto.SimpleBbsDto">
+  		select * from simpleBbs where id=#{param1}
+  	</select>
+  	
+  	<!--resultType은 리턴되는 값의 타입을 지정, insert와 delete는 결과값이 없으므로 리턴타입을 지정하지 않음.  -->
+  	<insert id="writeDao">
+  		insert into simpleBbs values(simpleBbs_seq.nextval,#{param1},#{param2},#{param3})
+  	</insert>
+  	
+  	
+  	<delete id="deleteDao">
+  		delete simpleBbs where id=#{param1}
+  	</delete>
+  	
+  	
+</mapper>
