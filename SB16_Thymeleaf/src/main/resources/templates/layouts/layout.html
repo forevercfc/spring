@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaft.org" 
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/Layout">
+<head>
+	<div th:replace="fragments/head::head"></div>
+</head>
+<body>
+	<div th:replace="fragments/header::header"></div>
+	<div th:replace="fragments/sidebar::sidebar"></div>
+	
+	<div layout:fragment="content"></div>
+	<!-- =>페이지 레이아웃에서 다른 내용으로 계속 변경됨 -->
+	
+	<div th:replace="fragments/footer::footer"></div>
+</body>
+</html>
