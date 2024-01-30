@@ -14,6 +14,8 @@ html,body{
 	width: 80%;
 	height: 80%;
 	left: 20%;
+	overflow-y:scroll;
+	padding: 10px; 
 }
 .content1{
 	background-color: orange;
@@ -21,10 +23,13 @@ html,body{
 .content2{
 	background-color: aqua;
 }
+.content3{
+	background-color: green;
+}
 header, footer{
 	width: 80%;
 	height: 10%;
-	background-color: gray;
+	background-color: yellow;
 	position: absolute;
 	z-index: 1;
 	text-align: center;
